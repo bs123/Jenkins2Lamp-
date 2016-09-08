@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node-dev src/index.js",
     "test": "./node_modules/mocha/bin/mocha test/*.unit.js ",
+    "test:it": "./node_modules/mocha/bin/mocha test/*.it.js ",
     "fake": "node-dev src/server/js/server.js"
   },
   "repository": {
@@ -24,11 +25,11 @@
   },
   "homepage": "https://github.com/bs123/Jenkins2Lamp-#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "node-rest-client": "^2.0.1",
-    "request": "^2.74.0"
+    "express": "4.14.0",
+    "sync-request": "3.0.1"
   },
   "devDependencies": {
-    "mocha": "^3.0.1"
+    "chai": "3.5.0",
+    "mocha": "3.0.1"
   }
 }
