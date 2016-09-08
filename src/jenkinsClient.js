@@ -1,5 +1,5 @@
-//var Client = require('node-rest-client').Client;
-//var client = new Client();
+var request = require('sync-request');
+var baseUrl = 'http://localhost:3000';
 
 module.exports = {
 
@@ -12,4 +12,9 @@ module.exports = {
     //        callback(responseData.result);
     //    });
     //}
+
+     getData(jobName) {
+         return JSON.parse(request('GET', baseUrl + '/jenkins/job/' + jobName + '/lastBuild/api/json').getBody());
+
+     }
 }
