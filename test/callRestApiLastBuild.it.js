@@ -2,7 +2,7 @@ var chai = require('chai');
 var assert = chai.assert;
 var expect = chai.expect;
 
-var jenkinsClient = require('../src/jenkinsClient.js');
+var jenkinsClient = require('../src/clients/jenkinsClient.js');
 
 describe('RestApi', function () {
     describe('lastBuild', function () {
