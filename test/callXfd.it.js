@@ -35,4 +35,13 @@ describe('XFD', function () {
         });
 
     });
+    describe('turn all lights on/off', function () {
+
+        // permanantly ignored, SIT
+        xit('should turn on and off all  ', function () {
+            xfdClient.allOn();
+            xfdClient.allOff();
+        });
+
+    });
 });

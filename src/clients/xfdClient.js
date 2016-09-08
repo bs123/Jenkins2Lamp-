@@ -12,11 +12,12 @@ var headers = {
     'Connection': 'keep-alive',
     'Referer': baseUrl
 };
+var ctls = ['ctl1', 'ctl2', 'ctl3', 'ctl4'];
 
 module.exports = {
 
     login() {
-        var response =  request('POST', baseUrl + 'login.html', {
+        var response = request('POST', baseUrl + 'login.html', {
             'headers': headers,
             'body': 'pw=1'
         });
@@ -32,7 +33,7 @@ module.exports = {
         //this.login();
         var response = request('POST', baseUrl, {
             'headers': headers,
-            'body': 'ctl'+ ctlNum + '=1'
+            'body': 'ctl' + ctlNum + '=1'
         });
 
         return response;
@@ -41,28 +42,36 @@ module.exports = {
     off(ctlNum) {
         var response = request('POST', baseUrl, {
             'headers': headers,
-            'body': 'ctl'+ ctlNum + '=0'
+            'body': 'ctl' + ctlNum + '=0'
         });
 
         return response;
-    },  
-    
-    allOff() {
-        var output = '';
-        //var response1 = request('POST', baseUrl + 'login.html', {
-        //    'headers': headers,
-        //    'body': 'pw=1'
-        //});
-        var response = request('POST', baseUrl, {
-            'headers': headers,
-            'body': 'ctl'+ ctlNum + '=1'
-        });
+    },
 
-        for (var property in response) {
-            output += property + ': ' + response[property] + '; ';
+    allOn() {
+        this.login();
+
+        for (var ctl of ctls) {
+            request('POST', baseUrl, {
+                'headers': headers,
+                'body': ctl + '=1'
+            });
         }
-        console.log(' : ' + output);
-        return response;
+
+        this.logout();
+    },
+
+    allOff() {
+        this.login();
+
+        for (var ctl of ctls) {
+            request('POST', baseUrl, {
+                'headers': headers,
+                'body': ctl + '=0'
+            });
+        }
+
+        this.logout();
     }
 
 }
