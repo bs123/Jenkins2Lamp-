@@ -14,7 +14,7 @@ describe('RestApi', function () {
         it('should return BuildStatus', function () {
 
 
-            var data =  JSON.parse(request('GET', 'http://localhost:3000/jenkins/job/mxd.client_Master/lastBuild/api/json').getBody());
+            var data = JSON.parse(request('GET', 'http://localhost:3000/jenkins/job/mxd.client_Master/lastBuild/api/json').getBody());
             assert.equal('SUCCESS', data.result);
 
             //jenkinsClient.getStatus();
@@ -30,22 +30,14 @@ describe('RestApi', function () {
             //});
         });
 
-        xit('timestamp should be in the past', function () {
-            var rdata = {};
-            var mytimestamp = 0;
-            client.get("http://localhost:3000/jenkins/job/mxd.client_Master/lastBuild/api/json", function (data, response) {
-                rdata = data;
-                mytimestamp = data.timestamp;
-                console.log(rdata.timestamp);
-                console.log(new Date().getTime());
-                //assert(new Date().getTime() < data.timestamp, 'timestamp not in the past');
+        it('timestamp should be in the past', function () {
+            var data = JSON.parse(request('GET', 'http://localhost:3000/jenkins/job/mxd.client_Master/lastBuild/api/json').getBody());
+            assert.equal('SUCCESS', data.result);
+            //assert(new Date().getTime() > data.timestamp, 'timestamp not in the past');
+            //assert.isAtLeast(new Date().getTime(), data.timestamp, 'timestamp not in the past');
+            //assert.isAtLeast(data.timestamp, new Date().getTime(), 'timestamp not in the past');
 
-
-            });
-            assert.isAtLeast(new Date().getTime(), mytimestamp, 'timestamp not in the past');
-            assert.isAtLeast(mytimestamp, new Date().getTime(), 'timestamp not in the past');
-
-            //expect(1).to.be.above(5);
+            expect(new Date().getTime()).to.be.above(data.timestamp);
         });
 
     });
