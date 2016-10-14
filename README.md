@@ -18,6 +18,12 @@ ssh pi@192.168.247.76
 username: pi
 password: raspberry (unless you changed it in the Raspberry Pi Configuration program earlier in the tutorial.)
 
+Sound output:
+/usr/bin $ sudo raspi-config
+numid=3,iface=MIXER,name='PCM Playback Route'
+  ; type=INTEGER,access=rw------,values=1,min=0,max=2,step=0
+  : values=1
+
 http://www.forum-raspberrypi.de/Thread-tutorial-xrdp-remote-desktop-verbindung-windows-android-ios-linux-mac-osx
 
 
@@ -105,6 +111,11 @@ RED:
   "sat": 255,
   "transitiontime": 2
 }
+
+
+http://www.youtube-mp3.org/de
+
+
 commit note:
 git commit -a  --author="fml <email>" -m "readme"
 
