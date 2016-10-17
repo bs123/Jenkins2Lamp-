@@ -1,0 +1,51 @@
+{
+  "config": {
+    "mock": true
+  },
+  "connections": {
+    "mock": {
+      "host": "localhost",
+      "port": 3000,
+      "url": "/",
+      "userName": "jan.maier",
+      "password": "blbla"
+    },
+    "jenkins": {
+      "host": "lnxv-5861.srv.mediaways.net",
+      "port": 80,
+      "url": "/",
+      "userName": "jan.maier",
+      "password": "ja452ier"
+    },
+    "xfd": {
+      "host": "http://192.168.247.253/",
+      "port": 80,
+      "url": "/",
+      "userName": "",
+      "password": "1"
+    },
+    "deCONZ": {
+      "host": "192.168.247.76",
+      "port": 8080,
+      "url": "/",
+      "userName": "",
+      "password": ""
+    }
+  },
+  "lamps": {
+    "id1": {
+      "id": 1,
+      "authToken": "f95bab93da0a1841116266d2c7163f33",
+      "hueCodeRed": 23,
+      "hueCodeYellow": 9703,
+      "hueCodeGreen": 23000
+    }
+  },
+  "jobs": {
+    "master": {
+      "url": " /",
+      "interval": "10",
+      "lamp": "1"
+    }
+  }
+}

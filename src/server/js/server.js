@@ -56,6 +56,10 @@ app.get('/', function (req, res) {
     res.send('Hello World');
 });
 
+app.put('/api/*/lights/*/state', function (req, res) {
+    res.send('[{"success":{"/lights/1/state/on":true}},{"success":{"/lights/1/state/bri":100}},{"success":{"/lights/1/state/hue":22}},{"success":{"/lights/1/state/sat":255}}]');
+});
+
 app.get('/jenkins/job/mxd.client_Master/lastBuild/api/json', function (req, res) {
     res.send(jenkinsResponse);
 });
