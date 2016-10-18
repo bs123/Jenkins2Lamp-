@@ -1,6 +1,8 @@
 var request = require('sync-request');
 //var baseUrl = 'http://localhost:3000';
-var baseUrl = 'http://192.168.247.253/';
+//var baseUrl = 'http://192.168.247.253/';
+var baseUrl = 'http://' + config.connections.xfd.host + ':' +  config.connections.xfd.port;
+
 var headers = {
     'Origin': baseUrl,
     'Accept-Encoding': 'gzip, deflate',

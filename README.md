@@ -59,10 +59,10 @@ git commit -a  --author="bs <email>" -m "readme"
 
 
 autorun:
+https://wiki.ubuntuusers.de/systemd/Service_Units/
 sudo cp DeConz.service /etc/systemd/system
- systemctl list-unit-files --type=service
-   systemctl -t service -a
- sudo systemctl status DeCONZ.service
-
-
-
+systemctl list-unit-files --type=service
+systemctl -t service -a
+sudo systemctl status DeCONZ.service
+sudo systemctl enable DeCONZ.service
+sudo systemctl start DeCONZ.service

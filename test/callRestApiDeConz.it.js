@@ -1,10 +1,10 @@
 var chai = require('chai');
 var assert = chai.assert;
-var expect = chai.expect;
+//var expect = chai.expect;
 
 var deCONZClient = require('../src/clients/deCONZClient.js');
 
-describe.only('RestApi', function () {
+describe('RestApi', function () {
     describe('colours', function () {
 
         it('should set color red', function () {

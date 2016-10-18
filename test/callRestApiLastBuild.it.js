@@ -4,7 +4,7 @@ var expect = chai.expect;
 
 var jenkinsClient = require('../src/clients/jenkinsClient.js');
 
-describe('RestApi', function () {
+describe.only('RestApi', function () {
     describe('lastBuild', function () {
 
         it('should return BuildStatus', function () {

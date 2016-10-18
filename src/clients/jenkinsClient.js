@@ -1,5 +1,7 @@
 var request = require('sync-request');
-var baseUrl = 'http://localhost:3000';
+//var baseUrl = 'http://localhost:3000';
+var config = require('../../config.json');
+var baseUrl = 'http://' + config.connections.jenkins.host + ':' +  config.connections.jenkins.port;
 
 module.exports = {
 

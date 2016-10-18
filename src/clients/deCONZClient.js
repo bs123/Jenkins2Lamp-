@@ -1,7 +1,7 @@
 var request = require('sync-request');
 var config = require('../../config.json');
 var baseUrl = 'http://' + config.connections.deCONZ.host + ':' +  config.connections.deCONZ.port;
-var authToken = config.lamps.id1.authToken; // 'f95bab93da0a1841116266d2c7163f33';
+var authToken = config.lamps.id1.authToken;
 
 module.exports = {
 
@@ -34,7 +34,6 @@ module.exports = {
     },
 
     off() {
-        //console.log('baseUrl : ' + baseUrl);
         return JSON.parse(request('PUT', baseUrl + '/api/' + authToken + '/lights/' + config.lamps.id1.id + '/state', {
             json: {
                 "on": false,
