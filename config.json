@@ -1,21 +1,19 @@
 {
-  "config": {
-    "mock": true
-  },
+  "mock": true,
   "connections": {
     "mock": {
       "host": "localhost",
       "port": 3000,
       "url": "/",
-      "userName": "jan.maier",
-      "password": "blbla"
+      "userName": "",
+      "password": ""
     },
     "jenkins": {
       "host": "lnxv-5861.srv.mediaways.net",
       "port": 80,
       "url": "/",
-      "userName": "jan.maier",
-      "password": "ja452ier"
+      "userName": "",
+      "password": ""
     },
     "xfd": {
       "host": "http://192.168.247.253/",
@@ -42,8 +40,7 @@
     }
   },
   "jobs": {
-    "master": {
-      "url": " /",
+    "mxd.client_Master": {
       "interval": "10",
       "lamp": "1"
     }

@@ -1,7 +1,10 @@
 var request = require('sync-request');
-//var baseUrl = 'http://localhost:3000';
-//var baseUrl = 'http://192.168.247.253/';
+var config = require('../../config.json');
 var baseUrl = 'http://' + config.connections.xfd.host + ':' +  config.connections.xfd.port;
+if (config.mock) {
+    baseUrl = 'http://' + config.connections.mock.host + ':' +  config.connections.mock.port;
+}
+
 
 var headers = {
     'Origin': baseUrl,
@@ -14,12 +17,14 @@ var headers = {
     'Connection': 'keep-alive',
     'Referer': baseUrl
 };
+
 var ctls = ['ctl1', 'ctl2', 'ctl3', 'ctl4'];
 
 module.exports = {
 
     login() {
-        var response = request('POST', baseUrl + 'login.html', {
+        console.log('baseUrl ' + baseUrl);
+        var response = request('POST', baseUrl + '/login.html', {
             'headers': headers,
             'body': 'pw=1'
         });
@@ -27,7 +32,7 @@ module.exports = {
     },
 
     logout() {
-        var response = request('GET', baseUrl + 'login.html');
+        var response = request('GET', baseUrl + '/login.html');
         return response;
     },
 

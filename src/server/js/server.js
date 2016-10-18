@@ -51,9 +51,19 @@ var jenkinsResponse = {
     ]
 }
 
+app.get('/login.html', function (req, res) {
+    res.send('');
+});
 
-app.get('/', function (req, res) {
-    res.send('Hello World');
+app.post('/login.html', function (req, res) {
+    res.send('');
+});
+app.get('', function (req, res) {
+    res.send('');
+});
+
+app.post('', function (req, res) {
+    res.send('');
 });
 
 app.put('/api/*/lights/*/state', function (req, res) {

@@ -2,6 +2,9 @@ var request = require('sync-request');
 var config = require('../../config.json');
 var baseUrl = 'http://' + config.connections.deCONZ.host + ':' +  config.connections.deCONZ.port;
 var authToken = config.lamps.id1.authToken;
+if (config.mock) {
+    baseUrl = 'http://' + config.connections.mock.host + ':' +  config.connections.mock.port;
+}
 
 module.exports = {
 
@@ -18,7 +21,6 @@ module.exports = {
     },
 
     on(hueCode) {
-
         var res = request('PUT', baseUrl + '/api/' + authToken + '/lights/' + config.lamps.id1.id + '/state', {
             json: {
                 "on": true,
