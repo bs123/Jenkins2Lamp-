@@ -30,9 +30,10 @@ sudo apt-get install qt4-default
 https://github.com/dresden-elektronik/deconz-rest-plugin
 
 
-pi@XFD:~ $ export DISPLAY=:0
-pi@XFD:~ $ cd /usr/bin/
-pi@XFD:/usr/bin $ /usr/bin/deCONZ-run.sh
+edit /usr/bin/deCONZ-run.sh
++cd /usr/bin/
++export DISPLAY=:0
+
 
 http://192.168.247.76:8080/index.html
 delight / delight
@@ -56,6 +57,12 @@ http://www.youtube-mp3.org/de
 commit note:
 git commit -a  --author="bs <email>" -m "readme"
 
+
+autorun:
+sudo cp DeConz.service /etc/systemd/system
+ systemctl list-unit-files --type=service
+   systemctl -t service -a
+ sudo systemctl status DeCONZ.service
 
 
 
