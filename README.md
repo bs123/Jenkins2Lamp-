@@ -1,7 +1,6 @@
 # Jenkins2Lamp-
 JenkinsRestAPi to Lamp Bridge
 
-
 howto XFD on RPi
 
 https://www.raspberrypi.org/wp-content/uploads/2012/04/quick-start-guide-v2_1.pdf
@@ -25,7 +24,6 @@ numid=3,iface=MIXER,name='PCM Playback Route'
   : values=1
 
 http://www.forum-raspberrypi.de/Thread-tutorial-xrdp-remote-desktop-verbindung-windows-android-ios-linux-mac-osx
-
 
 ZigBee
 sudo apt-get install qt4-default 
@@ -53,71 +51,10 @@ Etag: "f95bab93da0a1841116266d2c7163f33"
 
 get http://192.168.247.76:8080/api/f95bab93da0a1841116266d2c7163f33/config
 
-
-PUT
-http://192.168.247.76:8080/api/f95bab93da0a1841116266d2c7163f33/lights/1/state
-{
-  "on": true,
-  "bri": 180,
-  "hue": 43680,
-  "sat": 255,
-  "transitiontime": 10
-}
-
-{
-  "on": true,
-  "bri": 55,
-  "hue": 44235,
-  "sat": 155,
-  "transitiontime": 1
-}
-
-{
-  "on": true,
-  "bri": 255,
-  "hue": 44235,
-  "sat": 155,
-  "transitiontime": 2
-}
-
-OFF
-{
-  "on": false,
-}
-
-GREEN:
-{
-  "on": true,
-  "bri": 200,
-  "hue": 21845,
-  "sat": 255,
-  "transitiontime": 2
-}
-
-Yellow:
-{
-  "on": true,
-  "bri": 200,
-  "hue": 9703,
-  "sat": 255,
-  "transitiontime": 2
-}
-
-RED:
-{
-  "on": true,
-  "bri": 200,
-  "hue": 0,
-  "sat": 255,
-  "transitiontime": 2
-}
-
-
 http://www.youtube-mp3.org/de
 
-
 commit note:
-git commit -a  --author="fml <email>" -m "readme"
+git commit -a  --author="bs <email>" -m "readme"
 
 
 

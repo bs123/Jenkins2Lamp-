@@ -1,0 +1,12 @@
+[Unit]
+Description=deCONZ Service Unit
+
+[Service]
+Type=simple
+ExecStartPre=export DISPLAY=:0
+User=pi
+WorkingDirectory=/usr/bin/
+ExecStart=/usr/bin/deCONZ-run.sh
+
+[Install]
+WantedBy=multi-user.target

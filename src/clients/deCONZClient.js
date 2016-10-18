@@ -18,8 +18,8 @@ module.exports = {
     },
 
     on(hueCode) {
-        //console.log('baseUrl : ' + baseUrl);
-        return JSON.parse(request('PUT', baseUrl + '/api/' + authToken + '/lights/1/state', {
+
+        var res = request('PUT', baseUrl + '/api/' + authToken + '/lights/' + config.lamps.id1.id + '/state', {
             json: {
                 "on": true,
                 "bri": 250,
@@ -27,12 +27,15 @@ module.exports = {
                 "sat": 255,
                 "transitiontime": 1
             }
-        }).getBody('utf8'));
+        });
+        console.log('res : ' + res);
+        console.log('res : ' +   JSON.parse(res.getBody('utf8'))[0].stringify ); // data[0].stringify
+        return   JSON.parse(res.getBody('utf8'));
     },
 
     off() {
         //console.log('baseUrl : ' + baseUrl);
-        return JSON.parse(request('PUT', baseUrl + '/api/' + authToken + '/lights/1/state', {
+        return JSON.parse(request('PUT', baseUrl + '/api/' + authToken + '/lights/' + config.lamps.id1.id + '/state', {
             json: {
                 "on": false,
                 "transitiontime": 1
